@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtus Advisors — CRE Pulse | Commercial Real Estate Intelligence</title>
+<meta name="description" content="Institutional-grade commercial real estate intelligence delivered to your inbox every Sunday and Wednesday. 36 sources. Three geographies. Zero noise.">
+<meta property="og:title" content="Virtus Advisors — CRE Pulse">
+<meta property="og:description" content="The CRE brief built for dealmakers, not spectators. Subscribe free.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0C1829;--navy-mid:#101E33;--navy-deep:#060E1A;
+  --gold:#C4993C;--gold-light:#E8D5A0;--gold-pale:#F8F3E8;
+  --slate:#7A8BA5;--white:#FFFFFF;--off:#F8F9FB;
+  --g100:#F3F4F6;--g200:#E5E7EB;--g300:#D1D5DB;--g400:#9CA3AF;--g500:#6B7280;--g600:#4B5563;--g700:#374151;--g800:#1F2937;--g900:#111827;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Inter',Arial,Helvetica,sans-serif;
+}
+body{font-family:var(--serif);color:var(--g900);background:var(--off);-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,24,41,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.site-nav-inner{max-width:1080px;margin:0 auto;padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo-brand{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:4px;color:var(--gold);font-family:var(--sans);}
+.nav-logo-sub{font-size:9px;color:var(--slate);letter-spacing:2px;text-transform:uppercase;font-family:var(--sans);margin-top:1px;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-size:12px;font-family:var(--sans);color:var(--slate);text-transform:uppercase;letter-spacing:1.5px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);padding:8px 20px;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-family:var(--sans);transition:background 0.2s;cursor:pointer;border:none;}
+.nav-cta:hover{background:var(--gold-light);}
+
+/* HERO */
+.hero{background:var(--navy);padding:120px 28px 80px;position:relative;overflow:hidden;text-align:center;}
+.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.03;}
+.hero-content{position:relative;max-width:680px;margin:0 auto;}
+.hero-label{font-size:11px;text-transform:uppercase;letter-spacing:3.5px;color:var(--gold);font-family:var(--sans);margin-bottom:20px;font-weight:600;}
+.hero h1{font-size:46px;font-weight:400;color:var(--white);line-height:1.15;letter-spacing:-0.5px;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:18px;color:var(--slate);line-height:1.65;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;}
+.hero-form{display:flex;gap:0;max-width:460px;margin:0 auto;}
+.hero-input{flex:1;padding:16px 20px;font-size:15px;font-family:var(--sans);border:1px solid #2A3A54;border-right:none;border-radius:6px 0 0 6px;background:var(--navy-mid);color:var(--white);outline:none;transition:border-color 0.2s;}
+.hero-input:focus{border-color:var(--gold);}
+.hero-input::placeholder{color:#4A6080;}
+.hero-btn{padding:16px 32px;font-size:13px;font-weight:700;font-family:var(--sans);text-transform:uppercase;letter-spacing:1.5px;background:var(--gold);color:var(--navy);border:1px solid var(--gold);border-radius:0 6px 6px 0;cursor:pointer;transition:background 0.2s;}
+.hero-btn:hover{background:var(--gold-light);}
+.hero-note{font-size:11px;color:#4A6080;margin-top:14px;font-family:var(--sans);}
+.hero-success{background:var(--navy-mid);border:1px solid rgba(196,153,60,0.25);border-radius:6px;padding:18px 24px;max-width:460px;margin:0 auto;display:none;}
+.hero-success.show{display:block;}
+.hero-success strong{color:var(--gold);font-family:var(--sans);font-size:15px;}
+.hero-success p{color:var(--slate);font-size:13px;margin-top:4px;}
+
+/* METRICS BAR */
+.metrics{background:var(--navy-mid);border-top:1px solid #1A2E4A;border-bottom:1px solid #1A2E4A;}
+.metrics-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.metric{padding:22px 20px;text-align:center;border-right:1px solid #1A2E4A;}
+.metric:last-child{border-right:none;}
+.metric-label{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#4A6080;font-family:var(--sans);margin-bottom:4px;}
+.metric-val{font-size:24px;font-weight:400;color:var(--white);letter-spacing:-0.5px;}
+.metric-delta{font-size:11px;margin-top:2px;font-family:var(--sans);}
+.up{color:#34D399;}.dn{color:#F87171;}.fl{color:#4A6080;}
+
+/* FEATURES */
+.features{max-width:1080px;margin:0 auto;padding:64px 28px;}
+.section-label{font-size:11px;text-transform:uppercase;letter-spacing:3.5px;color:var(--gold);font-family:var(--sans);text-align:center;margin-bottom:10px;font-weight:600;}
+.section-title{font-size:32px;font-weight:400;color:var(--navy);text-align:center;margin-bottom:40px;letter-spacing:-0.3px;}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.feature-card{background:var(--white);border:1px solid var(--g200);border-radius:8px;padding:28px 24px;transition:box-shadow 0.2s,border-color 0.2s;}
+.feature-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06);border-color:var(--g300);}
+.feature-icon{width:10px;height:10px;border-radius:2px;margin-bottom:14px;}
+.feature-name{font-size:15px;font-weight:600;color:var(--navy);font-family:var(--sans);margin-bottom:8px;}
+.feature-desc{font-size:13px;color:var(--g500);line-height:1.6;font-family:var(--sans);}
+
+/* ANATOMY */
+.anatomy{background:var(--navy);padding:64px 28px;}
+.anatomy-inner{max-width:680px;margin:0 auto;}
+.anatomy .section-label,.anatomy .section-title{color:var(--white);}
+.anatomy .section-title{color:var(--white);}
+.anatomy-list{display:flex;flex-direction:column;gap:2px;}
+.anatomy-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border-radius:4px;}
+.anatomy-item:nth-child(odd){background:var(--navy-mid);}
+.anatomy-bar{width:4px;height:24px;border-radius:2px;flex-shrink:0;}
+.anatomy-text{flex:1;}
+.anatomy-name{font-size:14px;font-weight:600;color:#E2E8F0;font-family:var(--sans);display:inline;}
+.anatomy-desc{font-size:12px;color:#64748B;font-family:var(--sans);margin-left:12px;display:inline;}
+
+/* SOURCES */
+.sources{max-width:1080px;margin:0 auto;padding:64px 28px;text-align:center;}
+.segments{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.seg{padding:8px 18px;border-radius:6px;font-size:12px;font-weight:600;font-family:var(--sans);text-transform:uppercase;letter-spacing:1px;}
+.source-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:600px;margin:0 auto;}
+.source-tag{font-size:11px;color:var(--g400);font-family:var(--sans);padding:5px 12px;background:var(--g100);border-radius:4px;}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--white);border-top:1px solid var(--g200);border-bottom:1px solid var(--g200);padding:64px 28px;}
+.testimonials-inner{max-width:600px;margin:0 auto;text-align:center;}
+.testimonial{min-height:140px;position:relative;}
+.testimonial-slide{transition:opacity 0.5s ease;}
+.testimonial-quote{font-size:20px;color:var(--navy);line-height:1.55;font-style:italic;margin-bottom:18px;}
+.testimonial-author{font-size:13px;color:var(--g500);font-family:var(--sans);}
+.testimonial-author strong{color:var(--navy);}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:20px;}
+.dot{width:8px;height:8px;border-radius:4px;background:var(--g300);cursor:pointer;transition:background 0.3s;}
+.dot.active{background:var(--gold);}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--navy);padding:64px 28px;text-align:center;}
+.bottom-cta-inner{max-width:480px;margin:0 auto;}
+.bottom-cta h2{font-size:30px;font-weight:400;color:var(--white);margin:20px 0 14px;}
+.bottom-cta p{font-size:15px;color:var(--slate);line-height:1.6;margin-bottom:28px;}
+
+/* FOOTER */
+.footer{background:var(--navy-deep);padding:28px;text-align:center;}
+.footer p{font-size:11px;color:#4A6080;font-family:var(--sans);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:30px;}
+  .hero-sub{font-size:15px;}
+  .hero-form{flex-direction:column;gap:10px;}
+  .hero-input,.hero-btn{border-radius:6px;border:1px solid #2A3A54;}
+  .hero-btn{border-color:var(--gold);}
+  .metrics-inner{grid-template-columns:repeat(2,1fr);}
+  .metric{border-bottom:1px solid #1A2E4A;}
+  .features-grid{grid-template-columns:1fr;}
+  .segments{flex-direction:column;align-items:center;}
+  .nav-links a{display:none;}
+  .bottom-cta h2{font-size:24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 76 76" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="bf" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1E4D8C"/><stop offset="100%" stop-color="#143264"/></linearGradient><linearGradient id="bb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0E2A52"/><stop offset="100%" stop-color="#081C3A"/></linearGradient></defs>
+        <polygon points="38,28 32,28 8,72 18,72" fill="url(#bb)"/><polygon points="38,28 44,28 68,72 58,72" fill="url(#bb)"/><rect x="18" y="54" width="40" height="7" rx="1" fill="url(#bb)"/>
+        <polygon points="4,2 16,2 41,52 38,52" fill="url(#bf)"/><polygon points="72,2 60,2 35,52 38,52" fill="url(#bf)"/>
+      </svg>
+      <div>
+        <div class="nav-logo-brand">Virtus</div>
+        <div class="nav-logo-sub">Advisors</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#testimonials">Readers</a>
+      <button class="nav-cta" onclick="document.getElementById('hero-email').focus();window.scrollTo({top:0,behavior:'smooth'});">Subscribe</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-bg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMax slice"><rect x="50" y="100" width="80" height="400" rx="2" fill="#fff"/><rect x="150" y="50" width="100" height="450" rx="2" fill="#fff"/><rect x="270" y="150" width="70" height="350" rx="2" fill="#fff"/><rect x="360" y="80" width="120" height="420" rx="2" fill="#fff"/><rect x="500" y="30" width="90" height="470" rx="2" fill="#fff"/><rect x="610" y="120" width="80" height="380" rx="2" fill="#fff"/><rect x="710" y="60" width="110" height="440" rx="2" fill="#fff"/><rect x="840" y="140" width="70" height="360" rx="2" fill="#fff"/><rect x="930" y="90" width="100" height="410" rx="2" fill="#fff"/><rect x="1050" y="50" width="80" height="450" rx="2" fill="#fff"/></svg>
+  <div class="hero-content">
+    <div class="hero-label">Commercial Real Estate Intelligence</div>
+    <h1>The CRE brief built for <em>dealmakers</em>, not spectators</h1>
+    <p class="hero-sub">Institutional-grade market intelligence delivered every Sunday and Wednesday. 36 sources. Three geographies. Zero noise.</p>
+    <div id="hero-form-wrap">
+      <form class="hero-form" id="hero-form" onsubmit="handleSubscribe(event)">
+        <input type="email" id="hero-email" class="hero-input" placeholder="your@email.com" required>
+        <button type="submit" class="hero-btn">Subscribe Free</button>
+      </form>
+      <p class="hero-note">Free · Twice weekly · Unsubscribe anytime</p>
+    </div>
+    <div class="hero-success" id="hero-success">
+      <strong>You're in.</strong>
+      <p>Your first edition of CRE Pulse arrives this Sunday at 7 AM CT.</p>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metrics-inner">
+    <div class="metric"><div class="metric-label">Sources Monitored</div><div class="metric-val">36</div><div class="metric-delta fl">RSS feeds</div></div>
+    <div class="metric"><div class="metric-label">Asset Classes</div><div class="metric-val">4</div><div class="metric-delta fl">MF · Off · Ind · Debt</div></div>
+    <div class="metric"><div class="metric-label">Geographies</div><div class="metric-val">3</div><div class="metric-delta fl">National · TX · DFW</div></div>
+    <div class="metric"><div class="metric-label">Editions / Week</div><div class="metric-val">2</div><div class="metric-delta fl">Sun & Wed · 7 AM CT</div></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-label">What You Get</div>
+  <h2 class="section-title">Every edition, in your inbox</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="background:var(--gold);"></div>
+      <div class="feature-name">Hero Analysis</div>
+      <div class="feature-desc">The single most market-moving story, with full context and institutional-grade commentary.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#4F46E5;"></div>
+      <div class="feature-name">Asset Class Coverage</div>
+      <div class="feature-desc">Stories organized by Multifamily, Office, Industrial, and Capital Markets — tagged by geography.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#059669;"></div>
+      <div class="feature-name">Deal Tracker</div>
+      <div class="feature-desc">Major transactions tracked week-over-week with buyer, seller, price, and market data.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#DC2626;"></div>
+      <div class="feature-name">Debt Maturity Watch</div>
+      <div class="feature-desc">CMBS maturities, rate-cap expirations, and refinancing trends — the signals that move markets.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#7C3AED;"></div>
+      <div class="feature-name">Market Data Strip</div>
+      <div class="feature-desc">Treasury yields, CMBS spreads, cap rates, and occupancy with directional movement at a glance.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#0A66C2;"></div>
+      <div class="feature-name">Week Ahead Outlook</div>
+      <div class="feature-desc">FOMC decisions, earnings reports, and data releases — what to watch and why it matters.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMY -->
+<section class="anatomy">
+  <div class="anatomy-inner">
+    <div class="section-label">Anatomy of an Edition</div>
+    <h2 class="section-title">Structured for the way you work</h2>
+    <div class="anatomy-list">
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:var(--gold);"></div><div class="anatomy-text"><span class="anatomy-name">Hero story</span><span class="anatomy-desc">The single most market-moving item, with full analysis</span></div></div>
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:#60A5FA;"></div><div class="anatomy-text"><span class="anatomy-name">Market data strip</span><span class="anatomy-desc">Treasury, CMBS spreads, cap rates, occupancy — at a glance</span></div></div>
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:#34D399;"></div><div class="anatomy-text"><span class="anatomy-name">Deal tracker</span><span class="anatomy-desc">Major transactions with buyer, seller, price, and market</span></div></div>
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:#F87171;"></div><div class="anatomy-text"><span class="anatomy-name">Debt maturity watch</span><span class="anatomy-desc">CMBS expirations, rate caps, refi signals</span></div></div>
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:#A78BFA;"></div><div class="anatomy-text"><span class="anatomy-name">Multifamily · Office · Industrial · Debt</span><span class="anatomy-desc">Stories by asset class, tagged by geography</span></div></div>
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:#F59E0B;"></div><div class="anatomy-text"><span class="anatomy-name">Number of the week</span><span class="anatomy-desc">The one stat that tells the real story</span></div></div>
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:#F472B6;"></div><div class="anatomy-text"><span class="anatomy-name">Quote of the day</span><span class="anatomy-desc">Straight from CRE's decision-makers</span></div></div>
+      <div class="anatomy-item"><div class="anatomy-bar" style="background:#6EE7B7;"></div><div class="anatomy-text"><span class="anatomy-name">Week ahead outlook</span><span class="anatomy-desc">FOMC, earnings, data releases — what to watch</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES / COVERAGE -->
+<section class="sources" id="coverage">
+  <div class="section-label">Coverage</div>
+  <h2 class="section-title">Four asset classes. Three geographies.</h2>
+  <p style="font-size:14px;color:var(--g500);margin-bottom:28px;">National → Texas → DFW, every edition</p>
+  <div class="segments">
+    <div class="seg" style="background:#EEF2FF;color:#3730A3;">Multifamily</div>
+    <div class="seg" style="background:#F3E8FF;color:#6B21A8;">Office</div>
+    <div class="seg" style="background:#ECFDF5;color:#065F46;">Industrial / Logistics</div>
+    <div class="seg" style="background:#FFF7ED;color:#9A3412;">Capital Markets & Debt</div>
+  </div>
+  <div class="source-tags">
+    <span class="source-tag">Wall Street Journal</span><span class="source-tag">Financial Times</span><span class="source-tag">Bloomberg</span><span class="source-tag">Forbes</span><span class="source-tag">The Real Deal</span><span class="source-tag">GlobeSt</span><span class="source-tag">Commercial Observer</span><span class="source-tag">Bisnow</span><span class="source-tag">CoStar</span><span class="source-tag">Dallas Business Journal</span><span class="source-tag">D Magazine</span><span class="source-tag">Dallas Morning News</span>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">What Readers Say</div>
+    <div class="testimonial">
+      <div class="testimonial-slide" id="t-0"><p class="testimonial-quote">"The only CRE brief I read before my morning coffee. It's replaced three other newsletters."</p><p class="testimonial-author"><strong>Managing Director</strong> — Institutional Capital Partner</p></div>
+      <div class="testimonial-slide" id="t-1" style="display:none;"><p class="testimonial-quote">"The DFW submarket coverage alone is worth it. Nobody else is synthesizing local and national this well."</p><p class="testimonial-author"><strong>VP of Acquisitions</strong> — Sun Belt Multifamily Operator</p></div>
+      <div class="testimonial-slide" id="t-2" style="display:none;"><p class="testimonial-quote">"Clean, data-first, no fluff. Exactly what I forward to my investment committee."</p><p class="testimonial-author"><strong>Principal</strong> — Private Equity Real Estate Fund</p></div>
+    </div>
+    <div class="dots">
+      <div class="dot active" onclick="showTestimonial(0)"></div>
+      <div class="dot" onclick="showTestimonial(1)"></div>
+      <div class="dot" onclick="showTestimonial(2)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <svg viewBox="0 0 76 76" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="bf2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1E4D8C"/><stop offset="100%" stop-color="#143264"/></linearGradient><linearGradient id="bb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0E2A52"/><stop offset="100%" stop-color="#081C3A"/></linearGradient></defs>
+      <polygon points="38,28 32,28 8,72 18,72" fill="url(#bb2)"/><polygon points="38,28 44,28 68,72 58,72" fill="url(#bb2)"/><rect x="18" y="54" width="40" height="7" rx="1" fill="url(#bb2)"/>
+      <polygon points="4,2 16,2 41,52 38,52" fill="url(#bf2)"/><polygon points="72,2 60,2 35,52 38,52" fill="url(#bf2)"/>
+    </svg>
+    <h2>Start your morning with CRE Pulse</h2>
+    <p>Join the operators, investors, and dealmakers who rely on Virtus Advisors for their market edge.</p>
+    <form class="hero-form" onsubmit="handleSubscribe(event)" style="max-width:420px;margin:0 auto;">
+      <input type="email" class="hero-input" placeholder="your@email.com" required>
+      <button type="submit" class="hero-btn">Subscribe</button>
+    </form>
+    <p class="hero-note">Free · Twice weekly · Unsubscribe anytime</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Virtus Advisors. All rights reserved. Commercial Real Estate Intelligence.</p>
+</footer>
+
+<script>
+// Testimonial rotation
+let currentT = 0;
+function showTestimonial(n) {
+  document.querySelectorAll('.testimonial-slide').forEach(s => s.style.display = 'none');
+  document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+  document.getElementById('t-' + n).style.display = 'block';
+  document.querySelectorAll('.dot')[n].classList.add('active');
+  currentT = n;
+}
+setInterval(() => { showTestimonial((currentT + 1) % 3); }, 5000);
+
+// Subscribe handler
+function handleSubscribe(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  if (email.includes('@')) {
+    // In production, this would POST to your Beehiiv/Mailchimp API
+    document.getElementById('hero-form').style.display = 'none';
+    document.querySelector('.hero-note').style.display = 'none';
+    document.getElementById('hero-success').classList.add('show');
+    // Bottom form
+    e.target.innerHTML = '<p style="color:#C4993C;font-size:15px;font-family:var(--sans);">You\'re subscribed — first edition arriving soon.</p>';
+  }
+}
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
