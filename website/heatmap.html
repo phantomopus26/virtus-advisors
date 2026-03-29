@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DFW Submarket Heatmap — Virtus Advisors</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0C1829;
+    --navy-light: #1A2A4A;
+    --gold: #C4993C;
+    --cream: #F8F6F1;
+    --white: #FFFFFF;
+    --text: #1A1A2E;
+    --text-muted: #6B7280;
+    --border: #E5E2DA;
+    --green: #27AE60;
+    --red: #E74C3C;
+    --yellow: #F39C12;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .nav-back {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+  .nav-back:hover { color: var(--gold); }
+
+  /* ── HEADER ── */
+  .page-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 24px;
+  }
+
+  .page-header .tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .page-header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .page-header p {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .control-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .control-btn.active {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+
+  .control-btn:hover:not(.active) {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── METRIC SELECTOR ── */
+  .metric-pills {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 32px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .metric-pill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: var(--text-muted);
+  }
+
+  .metric-pill.active {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  /* ── HEATMAP GRID ── */
+  .heatmap-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .submarket-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .submarket-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(12,24,41,0.08);
+  }
+
+  .submarket-card .heat-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .submarket-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+
+  .submarket-type {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-top: 1px solid rgba(229,226,218,0.5);
+  }
+
+  .metric-label {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .metric-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .metric-value.positive { color: var(--green); }
+  .metric-value.negative { color: var(--red); }
+
+  /* ── LEGEND ── */
+  .legend {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 40px 60px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .legend-bar {
+    width: 120px;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--green), var(--yellow), var(--red));
+  }
+
+  @media (max-width: 768px) {
+    .heatmap-grid { grid-template-columns: 1fr; }
+    .controls, .metric-pills { padding: 0 20px 16px; }
+    .page-header, .heatmap-container, .legend { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">VIRTUS ADVISORS</a>
+  <a href="index.html" class="nav-back">← Back to Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="tag">MARKET DATA</div>
+  <h1>DFW Submarket Heatmap</h1>
+  <p>17 submarkets · Office, Industrial & Multifamily · Vacancy, Rent & Absorption</p>
+</div>
+
+<div class="controls">
+  <button class="control-btn active" data-type="all">All Types</button>
+  <button class="control-btn" data-type="office">Office</button>
+  <button class="control-btn" data-type="industrial">Industrial</button>
+  <button class="control-btn" data-type="multifamily">Multifamily</button>
+</div>
+
+<div class="metric-pills">
+  <button class="metric-pill active" data-metric="vacancy">VACANCY</button>
+  <button class="metric-pill" data-metric="rent">RENT</button>
+  <button class="metric-pill" data-metric="absorption">ABSORPTION</button>
+</div>
+
+<div class="heatmap-container">
+  <div class="heatmap-grid" id="heatmapGrid"></div>
+</div>
+
+<div class="legend">
+  <span>Strong</span>
+  <div class="legend-bar"></div>
+  <span>Weak</span>
+  <span style="margin-left:auto;font-size:10px;opacity:0.5;">Data illustrative · Updated quarterly</span>
+</div>
+
+<script>
+const SUBMARKETS = [
+  { name: "Uptown / Turtle Creek", type: "office", vacancy: 18.2, rent: 42.50, absorption: 85000, trend: "stable" },
+  { name: "Las Colinas / Irving", type: "office", vacancy: 22.1, rent: 32.75, absorption: -45000, trend: "declining" },
+  { name: "Legacy / Frisco", type: "office", vacancy: 14.8, rent: 38.90, absorption: 210000, trend: "improving" },
+  { name: "Richardson / Plano", type: "office", vacancy: 19.5, rent: 29.80, absorption: 32000, trend: "stable" },
+  { name: "Fort Worth CBD", type: "office", vacancy: 24.3, rent: 28.50, absorption: -68000, trend: "declining" },
+  { name: "Preston Center", type: "office", vacancy: 12.4, rent: 48.25, absorption: 45000, trend: "improving" },
+  { name: "Alliance / North Fort Worth", type: "industrial", vacancy: 8.2, rent: 7.85, absorption: 1800000, trend: "improving" },
+  { name: "South Dallas / I-20", type: "industrial", vacancy: 6.9, rent: 6.40, absorption: 2200000, trend: "improving" },
+  { name: "DFW Airport / Freeport", type: "industrial", vacancy: 9.4, rent: 8.10, absorption: 950000, trend: "stable" },
+  { name: "Great Southwest", type: "industrial", vacancy: 11.2, rent: 7.20, absorption: 420000, trend: "stable" },
+  { name: "McKinney / Allen", type: "industrial", vacancy: 7.5, rent: 7.95, absorption: 680000, trend: "improving" },
+  { name: "Uptown / Knox-Henderson", type: "multifamily", vacancy: 5.8, rent: 1950, absorption: 420, trend: "stable" },
+  { name: "Deep Ellum / East Dallas", type: "multifamily", vacancy: 7.2, rent: 1680, absorption: 380, trend: "improving" },
+  { name: "Frisco / Prosper", type: "multifamily", vacancy: 9.4, rent: 1820, absorption: 850, trend: "declining" },
+  { name: "Las Colinas Residential", type: "multifamily", vacancy: 6.5, rent: 1740, absorption: 520, trend: "stable" },
+  { name: "Fort Worth Southside", type: "multifamily", vacancy: 8.1, rent: 1450, absorption: 290, trend: "stable" },
+  { name: "Plano / Richardson", type: "multifamily", vacancy: 5.9, rent: 1690, absorption: 610, trend: "improving" }
+];
+
+let activeType = 'all';
+let activeMetric = 'vacancy';
+
+function getHeatColor(value, metric, type) {
+  let norm;
+  if (metric === 'vacancy') {
+    if (type === 'industrial') norm = Math.min(value / 15, 1);
+    else if (type === 'multifamily') norm = Math.min(value / 12, 1);
+    else norm = Math.min(value / 30, 1);
+  } else if (metric === 'rent') {
+    norm = 1 - Math.min(value / (type === 'multifamily' ? 2200 : type === 'office' ? 55 : 10), 1);
+  } else {
+    norm = value > 0 ? 0 : 1;
+  }
+  
+  if (norm < 0.33) return '#27AE60';
+  if (norm < 0.66) return '#F39C12';
+  return '#E74C3C';
+}
+
+function formatMetric(value, metric, type) {
+  if (metric === 'vacancy') return value.toFixed(1) + '%';
+  if (metric === 'rent') return type === 'multifamily' ? '$' + value.toLocaleString() + '/mo' : '$' + value.toFixed(2) + '/SF';
+  return (value >= 0 ? '+' : '') + value.toLocaleString() + (type === 'multifamily' ? ' units' : ' SF');
+}
+
+function renderGrid() {
+  const grid = document.getElementById('heatmapGrid');
+  const filtered = SUBMARKETS.filter(s => activeType === 'all' || s.type === activeType);
+  
+  grid.innerHTML = filtered.map(s => {
+    const heatColor = getHeatColor(
+      activeMetric === 'vacancy' ? s.vacancy : activeMetric === 'rent' ? s.rent : s.absorption,
+      activeMetric, s.type
+    );
+    const typeLabel = s.type.charAt(0).toUpperCase() + s.type.slice(1);
+    const absClass = s.absorption >= 0 ? 'positive' : 'negative';
+    
+    return `
+    <div class="submarket-card">
+      <div class="heat-bar" style="background:${heatColor};"></div>
+      <div class="submarket-name">${s.name}</div>
+      <div class="submarket-type">${typeLabel}</div>
+      <div class="metric-row">
+        <span class="metric-label">Vacancy</span>
+        <span class="metric-value">${s.vacancy.toFixed(1)}%</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">Rent</span>
+        <span class="metric-value">${formatMetric(s.rent, 'rent', s.type)}</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">Absorption</span>
+        <span class="metric-value ${absClass}">${formatMetric(s.absorption, 'absorption', s.type)}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Event listeners
+document.querySelectorAll('.control-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.control-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeType = btn.dataset.type;
+    renderGrid();
+  });
+});
+
+document.querySelectorAll('.metric-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.metric-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    activeMetric = pill.dataset.metric;
+    renderGrid();
+  });
+});
+
+renderGrid();
+</script>
+
+</body>
+</html>
