@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRE Consulting Services — Virtus Advisors</title>
+  <meta name="description" content="Virtus Advisors offers turnkey commercial real estate consulting — project management, vendor coordination, contract negotiation, and dispute resolution. Based in Dallas, TX." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d14'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='18' fill='%23c9a84c'>VA</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ---- Process Steps ---- */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 48px;
+      bottom: 48px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      z-index: 0;
+    }
+    .step {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      padding: 28px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      min-width: 44px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .step-body h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .step-body p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    /* ---- Engagement Models ---- */
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .engagement-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    .engagement-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-3px);
+    }
+    .engagement-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .engagement-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    .engagement-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 700px) {
+      .engagement-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- CTA Band ---- */
+    .cta-band {
+      background:
+        radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+        var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .cta-band h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 16px;
+    }
+    .cta-band p {
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+    .contact-line {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .contact-line a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      transition: color var(--transition);
+    }
+    .contact-line a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand"><span>Virtus</span> Advisors</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="consulting.html" class="active">Consulting</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="eyebrow">Services</div>
+      <h1>CRE Consulting Services</h1>
+      <p>
+        From ground-up commercial development to failing renovation rescues —
+        Virtus delivers the project leadership your deal requires.
+      </p>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: start;">
+
+        <div>
+          <div class="eyebrow">What We Offer</div>
+          <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 24px;">
+            Turnkey Project Management for Commercial Real Estate
+          </h2>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">
+            Virtus Advisors provides hands-on commercial development and project management
+            services. We step in where coordination fails, budgets slip, and timelines stall —
+            and we get projects moving again.
+          </p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">
+            Our principal has managed ground-up commercial developments and taken over
+            mid-stream renovation projects that were off track. We're available as a fee
+            consultant, an equity partner, or both depending on what the deal calls for.
+          </p>
+          <p style="color: var(--text-muted);">
+            We work lean, move fast, and communicate clearly. No bloated teams, no vague
+            deliverables — just direct project leadership with real accountability.
+          </p>
+
+          <div class="mt-32" style="margin-top: 32px; display:flex; gap:12px; flex-wrap:wrap;">
+            <span class="chip">Ground-Up Development</span>
+            <span class="chip">Renovation Rescue</span>
+            <span class="chip">Owner Representation</span>
+            <span class="chip">Vendor Management</span>
+            <span class="chip">Contract Negotiation</span>
+          </div>
+        </div>
+
+        <!-- Engagement Models -->
+        <div>
+          <div class="card" style="padding: 32px;">
+            <div class="eyebrow">Engagement Models</div>
+            <div style="display:flex; flex-direction:column; gap:20px; margin-top:20px;">
+
+              <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="font-size:1.4rem; min-width:36px;">💼</div>
+                <div>
+                  <h4 style="font-size:1rem; margin-bottom:6px;">Fee Consultant</h4>
+                  <p style="color:var(--text-muted); font-size:0.88rem;">
+                    Hired for specific scope — project oversight, vendor management,
+                    contract work. Clear deliverables, defined timeline.
+                  </p>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="font-size:1.4rem; min-width:36px;">🤝</div>
+                <div>
+                  <h4 style="font-size:1rem; margin-bottom:6px;">Equity Partner</h4>
+                  <p style="color:var(--text-muted); font-size:0.88rem;">
+                    Aligned on the outcome, not just the hours. Virtus takes equity
+                    in exchange for full-cycle project leadership.
+                  </p>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="font-size:1.4rem; min-width:36px;">🔀</div>
+                <div>
+                  <h4 style="font-size:1rem; margin-bottom:6px;">Hybrid</h4>
+                  <p style="color:var(--text-muted); font-size:0.88rem;">
+                    Fee plus equity — aligned incentives with defined cash compensation.
+                    Structure depends on deal size and scope.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Services Detail -->
+  <section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="text-center mb-48" style="margin-bottom: 48px;">
+        <div class="eyebrow">Hourly Services</div>
+        <h2 style="font-size: clamp(1.6rem, 3.5vw, 2.2rem);">What We Deliver</h2>
+        <p style="color: var(--text-muted); max-width: 520px; margin: 12px auto 0;">
+          Available on an hourly basis for owners, developers, and managers
+          who need targeted expertise without a full-time hire.
+        </p>
+      </div>
+
+      <div class="grid-2">
+
+        <div class="card">
+          <div class="icon-box">🔍</div>
+          <h3 style="font-size:1.2rem; margin-bottom:12px;">Vendor &amp; Consultant Solicitation</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:16px;">
+            Market the project, solicit qualified bids, and build a shortlist of vendors
+            and consultants that meet your scope requirements and budget. We know who to
+            call and how to run a competitive process.
+          </p>
+          <ul class="check-list">
+            <li>RFP preparation and distribution</li>
+            <li>Bid leveling and comparison</li>
+            <li>Qualification review</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon-box">⚙️</div>
+          <h3 style="font-size:1.2rem; margin-bottom:12px;">Vendor &amp; Consultant Management</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:16px;">
+            Day-to-day oversight of active vendors and consultants. Performance tracking,
+            schedule adherence, change order management, and accountability — so you're not
+            chasing progress reports.
+          </p>
+          <ul class="check-list">
+            <li>Schedule and milestone tracking</li>
+            <li>Change order review and approval</li>
+            <li>Issue escalation and resolution</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon-box">📋</div>
+          <h3 style="font-size:1.2rem; margin-bottom:12px;">Contract Negotiation</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:16px;">
+            Commercial real estate contracts are where deals succeed or fail. We negotiate
+            vendor contracts, consultant agreements, and construction contracts with clear
+            terms that protect your position.
+          </p>
+          <ul class="check-list">
+            <li>Scope and deliverable definition</li>
+            <li>Risk allocation and liability</li>
+            <li>Payment terms and retention</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon-box">⚖️</div>
+          <h3 style="font-size:1.2rem; margin-bottom:12px;">Dispute Resolution</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:16px;">
+            When vendors underperform, contracts go sideways, or a project stalls due to
+            conflict, we step in. We document, negotiate, and resolve — keeping projects
+            out of litigation where possible.
+          </p>
+          <ul class="check-list">
+            <li>Documentation and claim preparation</li>
+            <li>Mediation support</li>
+            <li>Contractor and consultant disputes</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Who We Work With -->
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+
+        <div>
+          <div class="eyebrow">Who We Work With</div>
+          <h2 style="font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 24px;">
+            Built for Owners, Developers, and Operators
+          </h2>
+          <p style="color: var(--text-muted); margin-bottom: 32px;">
+            Virtus works across the full spectrum of CRE — from large-scale commercial
+            development to individual homeowners managing complex renovation projects.
+            If you own, manage, or develop real estate and need professional project
+            leadership, we can help.
+          </p>
+          <ul class="check-list">
+            <li>Property owners who need representation during construction or renovation</li>
+            <li>Tenants managing tenant improvement build-outs</li>
+            <li>Developers who need project management depth without adding headcount</li>
+            <li>Asset managers overseeing capital projects across a portfolio</li>
+            <li>Homeowners managing large renovation projects who need professional oversight</li>
+          </ul>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="card" style="padding: 28px 32px; display:flex; gap:16px; align-items:center;">
+            <div style="font-size:1.8rem; min-width:40px;">🏢</div>
+            <div>
+              <h4 style="font-size:0.95rem; margin-bottom:4px;">Property Owners</h4>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Owner representation through the full development or renovation cycle</p>
+            </div>
+          </div>
+          <div class="card" style="padding: 28px 32px; display:flex; gap:16px; align-items:center;">
+            <div style="font-size:1.8rem; min-width:40px;">🏗️</div>
+            <div>
+              <h4 style="font-size:0.95rem; margin-bottom:4px;">Developers</h4>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Ground-up project management from entitlement to delivery</p>
+            </div>
+          </div>
+          <div class="card" style="padding: 28px 32px; display:flex; gap:16px; align-items:center;">
+            <div style="font-size:1.8rem; min-width:40px;">📊</div>
+            <div>
+              <h4 style="font-size:0.95rem; margin-bottom:4px;">Asset Managers</h4>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Portfolio capital project oversight and vendor accountability</p>
+            </div>
+          </div>
+          <div class="card" style="padding: 28px 32px; display:flex; gap:16px; align-items:center;">
+            <div style="font-size:1.8rem; min-width:40px;">🏠</div>
+            <div>
+              <h4 style="font-size:0.95rem; margin-bottom:4px;">Homeowners</h4>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Professional oversight for complex residential renovation projects</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CTA Band -->
+  <section class="section cta-band">
+    <div class="container">
+      <div class="eyebrow">Get Started</div>
+      <h2>Ready to Talk About Your Project?</h2>
+      <p>
+        No long intake forms. Send an email or call — we'll have a direct conversation
+        about what you're building and whether we're the right fit.
+      </p>
+      <a href="mailto:val@virtusadvisors.com?subject=CRE Consulting Inquiry" class="btn btn-primary">
+        Schedule a Consultation
+      </a>
+      <div class="contact-line">
+        <a href="mailto:val@virtusadvisors.com">val@virtusadvisors.com</a>
+        <a href="tel:+18603784804">(860) 378-4804</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><span>Virtus</span> Advisors</div>
+        <div class="footer-contact">
+          <a href="mailto:val@virtusadvisors.com">val@virtusadvisors.com</a>
+          <a href="tel:+18603784804">(860) 378-4804</a>
+          <span style="color:var(--text-muted);">Dallas, TX</span>
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 Virtus Advisors LLC. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links  = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools &amp; Products — Virtus Advisors</title>
+  <meta name="description" content="Virtus Advisors builds technology for commercial real estate professionals. CRE Pulse daily newsletter and TREC license study platform." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d14'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='18' fill='%23c9a84c'>VA</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ---- Product Section ---- */
+    .product-block {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 80px;
+      align-items: start;
+    }
+    .product-block.reverse {
+      grid-template-columns: 420px 1fr;
+    }
+    .product-block.reverse .product-sidebar {
+      order: -1;
+    }
+
+    @media (max-width: 900px) {
+      .product-block,
+      .product-block.reverse {
+        grid-template-columns: 1fr;
+      }
+      .product-block.reverse .product-sidebar {
+        order: 0;
+      }
+    }
+
+    .product-sidebar .card {
+      position: sticky;
+      top: calc(var(--nav-h) + 24px);
+    }
+
+    .price-block {
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .price-block .price-label {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .price-block .price-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .price-block .price-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .source-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .coverage-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    /* ---- TREC Stats ---- */
+    .trec-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .trec-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .trec-stat .num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .trec-stat .lbl {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ---- Separator ---- */
+    .product-separator {
+      background: var(--bg-surface);
+      padding: 0;
+      height: 1px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand"><span>Virtus</span> Advisors</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="consulting.html">Consulting</a></li>
+        <li><a href="tools.html" class="active">Tools</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="eyebrow">Products</div>
+      <h1>Tools &amp; Products</h1>
+      <p>
+        Technology built for commercial real estate professionals — intelligence
+        tools and education platforms that actually move the needle.
+      </p>
+    </div>
+  </header>
+
+  <!-- Product 1: CRE Pulse -->
+  <section class="section" id="cre-pulse">
+    <div class="container">
+      <div class="product-block">
+
+        <div>
+          <div class="eyebrow">Product 01</div>
+          <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.6rem);">CRE Pulse</h2>
+            <span class="badge badge-soon">Coming Soon</span>
+          </div>
+
+          <p style="font-size:1.1rem; color:var(--text); margin-bottom:20px; font-weight:500;">
+            Daily CRE intelligence from 36 institutional sources, delivered every morning before
+            the market opens.
+          </p>
+
+          <p style="color:var(--text-muted); margin-bottom:24px;">
+            CRE Pulse monitors 36 institutional sources across the commercial real estate
+            landscape and synthesizes the most relevant deals, trends, and market signals
+            into a single concise brief. Built for the professional who doesn't have two hours
+            to read the full feed.
+          </p>
+
+          <div class="eyebrow" style="margin-bottom:16px; margin-top:32px;">Coverage</div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+
+            <div>
+              <p style="font-size:0.82rem; color:var(--text-muted); letter-spacing:0.06em; text-transform:uppercase; font-weight:600; margin-bottom:10px;">Asset Classes</p>
+              <ul class="check-list">
+                <li>Multifamily</li>
+                <li>Office</li>
+                <li>Industrial</li>
+                <li>Capital Markets</li>
+              </ul>
+            </div>
+
+            <div>
+              <p style="font-size:0.82rem; color:var(--text-muted); letter-spacing:0.06em; text-transform:uppercase; font-weight:600; margin-bottom:10px;">Geographies</p>
+              <ul class="check-list">
+                <li>National</li>
+                <li>Texas</li>
+                <li>DFW Metro</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="eyebrow" style="margin-bottom:12px; margin-top:40px;">36 Institutional Sources Including</div>
+          <div class="source-grid">
+            <div class="source-chip">CoStar</div>
+            <div class="source-chip">GlobeSt</div>
+            <div class="source-chip">REBusiness</div>
+            <div class="source-chip">CBRE Research</div>
+            <div class="source-chip">JLL Intel</div>
+            <div class="source-chip">Yardi Matrix</div>
+            <div class="source-chip">Bisnow</div>
+            <div class="source-chip">CRE Daily</div>
+            <div class="source-chip">+28 more</div>
+          </div>
+        </div>
+
+        <div class="product-sidebar">
+          <div class="card">
+            <div class="price-block">
+              <div class="price-label">Pricing</div>
+              <div class="price-value">&#36;10 / month</div>
+              <div class="price-note">One week free trial — no credit card required to start</div>
+            </div>
+
+            <h4 style="margin-bottom:12px; font-size:1rem;">Join the Early Access List</h4>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:20px;">
+              CRE Pulse launches soon. Join the list now to get first access and lock in
+              early pricing.
+            </p>
+
+            <form action="mailto:val@virtusadvisors.com" method="get" enctype="text/plain" style="display:flex; flex-direction:column; gap:14px;">
+              <div class="form-group">
+                <label for="pulse-name">Name</label>
+                <input type="text" id="pulse-name" name="name" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="pulse-email">Email Address</label>
+                <input type="email" id="pulse-email" name="email" placeholder="you@company.com" required />
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                Join the Early Access List
+              </button>
+            </form>
+
+            <p style="font-size:0.78rem; color:var(--text-muted); text-align:center; margin-top:12px;">
+              No spam. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Product 2: TREC Study Guide -->
+  <section class="section" style="background: var(--bg-surface);" id="trec">
+    <div class="container">
+      <div class="product-block reverse">
+
+        <div>
+          <div class="eyebrow">Product 02</div>
+          <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px; flex-wrap:wrap;">
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.6rem);">TREC Sales Agent<br />License Study Guide</h2>
+            <span class="badge badge-soon">Coming Soon</span>
+          </div>
+
+          <p style="font-size:1.05rem; color:var(--text); margin-bottom:20px; font-weight:500;">
+            The most comprehensive interactive study platform for the Texas Real Estate
+            Commission Sales Agent exam.
+          </p>
+
+          <p style="color:var(--text-muted); margin-bottom:24px;">
+            Built on the Champions School of Real Estate curriculum, this study dashboard
+            covers every topic, every course, and every concept you'll encounter on the
+            TREC exam. Not just flashcards — a full learning system with quizzes, progress
+            tracking, and exam-day readiness tools.
+          </p>
+
+          <div class="trec-stats">
+            <div class="trec-stat">
+              <div class="num">6</div>
+              <div class="lbl">TREC<br />Courses</div>
+            </div>
+            <div class="trec-stat">
+              <div class="num">749+</div>
+              <div class="lbl">Study<br />Flashcards</div>
+            </div>
+            <div class="trec-stat">
+              <div class="num">100%</div>
+              <div class="lbl">Curriculum<br />Coverage</div>
+            </div>
+          </div>
+
+          <div class="eyebrow" style="margin-bottom:16px;">What's Included</div>
+          <ul class="check-list">
+            <li>All 6 TREC-required courses covered (Champions School curriculum)</li>
+            <li>749+ categorized flashcards with spaced repetition</li>
+            <li>Practice quizzes with detailed answer explanations</li>
+            <li>Progress tracking by course and topic</li>
+            <li>Exam-day readiness score and weak-area identification</li>
+            <li>Mobile-friendly — study on any device</li>
+          </ul>
+        </div>
+
+        <div class="product-sidebar">
+          <div class="card">
+            <div class="price-block">
+              <div class="price-label">Pricing</div>
+              <div class="price-value">Coming Soon</div>
+              <div class="price-note">Early sign-up list open now</div>
+            </div>
+
+            <h4 style="margin-bottom:12px; font-size:1rem;">Join the Early Sign-Up List</h4>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:20px;">
+              Be among the first to access the platform when it launches. Early sign-ups
+              will receive pricing details and access first.
+            </p>
+
+            <form action="mailto:val@virtusadvisors.com" method="get" enctype="text/plain" style="display:flex; flex-direction:column; gap:14px;">
+              <div class="form-group">
+                <label for="trec-name">Name</label>
+                <input type="text" id="trec-name" name="name" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="trec-email">Email Address</label>
+                <input type="email" id="trec-email" name="email" placeholder="you@email.com" required />
+              </div>
+              <input type="hidden" name="subject" value="TREC Study Guide - Early Sign-Up" />
+              <button type="submit" class="btn btn-outline" style="width:100%;">
+                Join the Early Sign-Up List
+              </button>
+            </form>
+
+            <p style="font-size:0.78rem; color:var(--text-muted); text-align:center; margin-top:12px;">
+              No spam. Notification only when we launch.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><span>Virtus</span> Advisors</div>
+        <div class="footer-contact">
+          <a href="mailto:val@virtusadvisors.com">val@virtusadvisors.com</a>
+          <a href="tel:+18603784804">(860) 378-4804</a>
+          <span style="color:var(--text-muted);">Dallas, TX</span>
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 Virtus Advisors LLC. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links  = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+</body>
+</html>
